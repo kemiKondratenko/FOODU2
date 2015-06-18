@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,6 +23,10 @@ public class OrderActivity extends ActionBarActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, names);
         lvMain.setAdapter(adapter);
+    }
+
+    public void goToNextFromList(View view){
+
     }
 
     @Override
