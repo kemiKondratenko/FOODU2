@@ -10,8 +10,8 @@ import android.widget.ListView;
 
 public class OrderActivity extends ActionBarActivity {
 
-    String[] names = { "Піца", "Хліб", "Пиво", "Риба",
-            "Молоко", "Цукерки", "Сухарики", "Пюре" };
+    String[] names = { "Pizza", "Bread", "Beer", "Fish",
+            "Milk", "Sweets", "Soft bread", "Potato" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
