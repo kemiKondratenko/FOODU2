@@ -4,14 +4,24 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class OrderActivity extends ActionBarActivity {
+
+    String[] names = { "Піца", "Хліб", "Пиво", "Риба",
+            "Молоко", "Цукерки", "Сухарики", "Пюре" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
+        ListView lvMain = (ListView) findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, names);
+        lvMain.setAdapter(adapter);
     }
 
     @Override
