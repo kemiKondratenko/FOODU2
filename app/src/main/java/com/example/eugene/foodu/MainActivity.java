@@ -24,10 +24,10 @@ public class MainActivity extends ActionBarActivity {
 
     public void firstButton(View view){
         textView.setText("нажав");
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
-        Intent myIntent = new Intent(MainActivity.this, NextActivity.class);
+        Intent myIntent = new Intent(MainActivity.this, OrderActivity.class);
         MainActivity.this.startActivity(myIntent);
+        this.overridePendingTransition(R.anim.animation_leave,
+                R.anim.animation_enter);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
