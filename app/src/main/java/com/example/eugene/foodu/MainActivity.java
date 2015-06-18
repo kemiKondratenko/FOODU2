@@ -1,24 +1,34 @@
 package com.example.eugene.foodu;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+    TextView textView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textView = (TextView) findViewById(R.id.textView2);
+        textView = (TextView) findViewById(R.id.textView2);
         textView.setText(" Сьогодні п'ятниця \n" +
                          " Пропонуємо вам купити \n" +
                          " Молоко, Батон, яйця, пиво і рибу!");
     }
 
+    public void firstButton(View view){
+        textView.setText("нажав");
+        this.overridePendingTransition(R.anim.animation_enter,
+                R.anim.animation_leave);
+        Intent myIntent = new Intent(MainActivity.this, NextActivity.class);
+        MainActivity.this.startActivity(myIntent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
