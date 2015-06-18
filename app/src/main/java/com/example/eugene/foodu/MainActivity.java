@@ -23,7 +23,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void firstButton(View view){
-        textView.setText("нажав");
         Intent myIntent = new Intent(MainActivity.this, OrderActivity.class);
         MainActivity.this.startActivity(myIntent);
         this.overridePendingTransition(R.anim.animation_enter,

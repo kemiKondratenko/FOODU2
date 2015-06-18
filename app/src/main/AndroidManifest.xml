@@ -20,6 +20,11 @@
             android:name=".OrderActivity"
             android:label="@string/title_activity_order" >
         </activity>
+        <activity
+            android:name=".FillParametersForOrder"
+            android:label="@string/title_activity_fill_parameters_for_order" >
+        </activity>
     </application>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 </manifest>

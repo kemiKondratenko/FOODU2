@@ -1,42 +1,32 @@
 package com.example.eugene.foodu;
 
-import android.content.Intent;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
-public class OrderActivity extends ActionBarActivity {
-
-    String[] names = { "Pizza", "Bread", "Beer", "Fish",
-            "Milk", "Sweets", "Soft bread", "Potato" };
-
+public class FillParametersForOrder extends ActionBarActivity {
+    String mPhoneNumber = null;
+    EditText phone = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
-
-        ListView lvMain = (ListView) findViewById(R.id.listView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, names);
-        lvMain.setAdapter(adapter);
-    }
-
-    public void goToNextFromList(View view){
-        Intent myIntent = new Intent(OrderActivity.this, FillParametersForOrder.class);
-        OrderActivity.this.startActivity(myIntent);
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
+        setContentView(R.layout.activity_fill_parameters_for_order);
+        TelephonyManager tMgr = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
+        mPhoneNumber = tMgr.getLine1Number();
+        phone = (EditText) findViewById(R.id.phoneNimber);
+        phone.setText(mPhoneNumber);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_order, menu);
+        getMenuInflater().inflate(R.menu.menu_fill_parameters_for_order, menu);
         return true;
     }
 
